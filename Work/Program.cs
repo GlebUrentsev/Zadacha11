@@ -116,7 +116,7 @@ namespace Work
             }
         }
         //функция для шифрования (заносит значение в матрицу значений) - зашифровка
-        public static void PutValue(string[,] gridKey, string[,] gridForEncrypted,string toEncrypt )
+        public static void PutValue(string[,] gridKey, string[,] gridForEncrypted,string toEncrypt ) //не требуется ref т.к идёт обычное присваивание
         {
             for (int i = 0; i < gridKey.GetLength(0); i++)
                 for (int j = 0; j < gridKey.GetLength(1); j++)
@@ -127,7 +127,7 @@ namespace Work
                     }
         }
         //функция получает значения из матрицы значений (дешифровка)
-        public static void GetValue(string[,] grid, string[,] gridEncrypted,ref string Decrypt)
+        public static void GetValue(string[,] grid, string[,] gridEncrypted,ref string Decrypt)//испозуем передачу по ссылке т.к требуется изменить именно значение toDecypt
         {
             for (int i = 0; i < gridEncrypted.GetLength(0); i++)
                 for (int j = 0; j < gridEncrypted.GetLength(1); j++)
